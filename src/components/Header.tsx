@@ -2,11 +2,13 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Phone, Menu, X } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const navLinks = [
   { label: "Home", to: "/" },
   { label: "Services", to: "/services" },
-  { label: "Gallery & Contact", to: "/gallery" },
+  { label: "Gallery", to: "/gallery" },
+  { label: "Contact", to: "/contact" },
 ];
 
 const Header = () => {
@@ -16,8 +18,20 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-border">
       <div className="container-grid flex items-center justify-between h-16 px-6 md:px-12 lg:px-20">
-        <Link to="/" className="font-heading text-xl tracking-wider text-foreground">
-          TUNE TOWN
+        <Link to="/" className="flex items-center gap-3">
+          <img
+            src={logo}
+            alt="Tune Town logo"
+            className="h-12 md:h-14 w-auto object-contain"
+          />
+          <div className="leading-tight">
+            <div className="font-heading text-xl md:text-2xl tracking-wider text-white font-bold">
+              TUNE TOWN
+            </div>
+            <div className="text-xs text-orange-500 uppercase tracking-[0.2em]">
+              German & European Car Specialists
+            </div>
+          </div>
         </Link>
 
         {/* Desktop nav */}
@@ -37,8 +51,8 @@ const Header = () => {
           ))}
           <a href="tel:+971562616261">
             <Button variant="cta" size="sm" className="gap-2">
-              <Phone className="w-3.5 h-3.5" />
-              Book Now
+              <Phone className="w-4 h-4" />
+              Call Now
             </Button>
           </a>
         </nav>
@@ -71,10 +85,10 @@ const Header = () => {
             </Link>
           ))}
           <a href="tel:+971562616261" className="block mt-2">
-            <Button variant="cta" size="sm" className="w-full gap-2">
-              <Phone className="w-3.5 h-3.5" />
-              Book Now
-            </Button>
+            <Button variant="cta" size="sm" className="gap-2 px-5 py-2.5 rounded-md">
+              <Phone className="w-4 h-4" />
+              Call Now
+              </Button>
           </a>
         </nav>
       )}

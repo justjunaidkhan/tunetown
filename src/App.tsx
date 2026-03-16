@@ -7,7 +7,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Index from "./pages/Index.tsx";
 import Services from "./pages/Services.tsx";
-import GalleryContact from "./pages/GalleryContact.tsx";
+import Gallery from "./pages/Gallery.tsx";
+import Contact from "./pages/Contact.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -22,7 +23,8 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/gallery" element={<GalleryContact />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

@@ -22,15 +22,15 @@ const serviceDetails = [
     image: engineImg,
     imageAlt: "BMW engine bay mechanical service at Tune Town workshop Sharjah",
     desc: "Our 5 fully equipped service bays with hydraulic lifts handle everything from routine maintenance to complex mechanical repairs. We use advanced brand-specific special tools designed for European vehicles.",
-    benefits: ["5 hydraulic lift service bays", "Brand-specific special tools", "BMW E, F, G series expertise", "Suspension & steering systems", "Brake system overhaul", "Cooling system repair"],
+    benefits: ["5 heavy duty hydraulic lifts", "Brand-specific special tools", ", Automatic AC refrigerant filling ", "leak detection machine", "Full air tight paint booth"],
   },
   {
     icon: Monitor,
     title: "Diagnostics & Software Programming",
     image: diagnosticsImg,
     imageAlt: "Dealer-level diagnostic computer connected to European car in Sharjah",
-    desc: "Access to dealer-level diagnostic software including ISTA, TIS, AutoAuth, Maxisys, and AllData. We perform comprehensive fault diagnosis, ECU programming, and software updates.",
-    benefits: ["ISTA & TIS dealer software", "AutoAuth certified access", "Maxisys advanced diagnostics", "AllData technical database", "ECU programming & coding", "Module retrofitting"],
+    desc: "DEALER LEVEL DIAGONOSTIC: State-of-the-art Diagnostic devices & software, like Autel Maxisys Ulta S2, AllData Repair, with agency level access to software’s like BMW ISTA, TIS, ESys, Mercedes WIS, VAG VCDS.",
+    benefits: [" BMW ISTA", "TIS", "ESys", "Mercedes WIS", "VAG VCDS"],
   },
   {
     icon: Car,
@@ -55,6 +55,14 @@ const serviceDetails = [
     imageAlt: "Professional car detailing and polishing at Tune Town Sharjah",
     desc: "Premium interior and exterior detailing services in our dedicated detailing bay. From paint correction to ceramic coating, we restore and protect your vehicle's finish.",
     benefits: ["Paint correction & polishing", "Ceramic coating application", "Interior deep cleaning", "Leather conditioning", "Engine bay detailing", "Headlight restoration"],
+  },
+  {
+    icon: Cog,
+    title: "Advance body shop",
+    image: engineImg,
+    imageAlt: "Advance body shop",
+    desc: "Our dedicated clean section for engine and transmission rebuilding ensures contamination-free assembly. We handle complete rebuilds, overhauls, and performance upgrades.",
+    benefits: ["Paintless Dent Removal", "Spot Paint Repair", "Spot Welding", "Aluminum sheet welding"],
   },
 ];
 
