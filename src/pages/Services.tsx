@@ -5,6 +5,8 @@ import engineImg from "@/assets/engine-detail.jpg";
 import diagnosticsImg from "@/assets/diagnostics.jpg";
 import bodyshopImg from "@/assets/bodyshop.jpg";
 import detailingImg from "@/assets/detailing.jpg";
+import advancebodyshop from "@/assets/advancebodyshop.jpg";
+
 
 function FadeSection({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   const { ref, inView } = useInView();
@@ -18,11 +20,11 @@ function FadeSection({ children, className = "" }: { children: React.ReactNode; 
 const serviceDetails = [
   {
     icon: Wrench,
-    title: "Mechanical Services",
+    title: "Services - Mechanical",
     image: engineImg,
     imageAlt: "BMW engine bay mechanical service at Tune Town workshop Sharjah",
     desc: "Our 5 fully equipped service bays with hydraulic lifts handle everything from routine maintenance to complex mechanical repairs. We use advanced brand-specific special tools designed for European vehicles.",
-    benefits: ["5 heavy duty hydraulic lifts", "Brand-specific special tools", ", Automatic AC refrigerant filling ", "leak detection machine", "Full air tight paint booth"],
+    benefits: ["5 heavy duty hydraulic lifts", "Brand-specific special tools", "Automatic AC refrigerant filling ", "leak detection machine", "Full air tight paint booth"],
   },
   {
     icon: Monitor,
@@ -59,7 +61,7 @@ const serviceDetails = [
   {
     icon: Cog,
     title: "Advance body shop",
-    image: engineImg,
+    image: advancebodyshop,
     imageAlt: "Advance body shop",
     desc: "Our dedicated clean section for engine and transmission rebuilding ensures contamination-free assembly. We handle complete rebuilds, overhauls, and performance upgrades.",
     benefits: ["Paintless Dent Removal", "Spot Paint Repair", "Spot Welding", "Aluminum sheet welding"],

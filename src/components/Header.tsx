@@ -16,83 +16,123 @@ const Header = () => {
   const location = useLocation();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-border">
-      <div className="container-grid flex items-center justify-between h-16 px-6 md:px-12 lg:px-20">
-        <Link to="/" className="flex items-center gap-3">
-          <img
-            src={logo}
-            alt="Tune Town logo"
-            className="h-12 md:h-14 w-auto object-contain"
-          />
-          <div className="leading-tight">
-            <div className="font-heading text-xl md:text-2xl tracking-wider text-white font-bold">
-              TUNE TOWN
+    <>
+    <header className="fixed top-4 left-0 right-0 z-50 px-4 md:px-8 lg:px-16">
+      <div className="mx-auto max-w-6xl">
+          <div className="rounded-xl border border-white/20 bg-white/10 backdrop-blur-2xl shadow-[0_10px_40px_rgba(0,0,0,0.4)]">
+            <div className="flex items-center justify-between h-16 md:h-[72px] px-4 md:px-6 lg:px-8">
+              {/* Logo + Brand */}
+              <Link to="/" className="flex items-center gap-3 min-w-0">
+                <img
+                  src={logo}
+                  alt="Tune Town logo"
+                  className="h-10 md:h-12 w-auto object-contain shrink-0"
+                />
+                <div className="leading-tight min-w-0">
+                  <div className="font-heading text-sm md:text-lg tracking-[0.18em] text-white font-semibold whitespace-nowrap">
+                    TUNE TOWN
+                  </div>
+                  <div className="hidden md:block text-[10px] uppercase tracking-[0.22em] text-primary whitespace-nowrap">
+                    German & European Car Specialists
+                  </div>
+                </div>
+              </Link>
+
+              {/* Desktop Nav */}
+              <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+                {navLinks.map((link) => {
+                  const isActive = location.pathname === link.to;
+
+                  return (
+                    <Link
+                      key={link.to}
+                      to={link.to}
+                      className={`relative text-sm uppercase tracking-[0.16em] transition-colors duration-200 ${
+                        isActive
+                          ? "text-white"
+                          : "text-white/80 hover:text-white"
+                      }`}
+                    >
+                      {link.label}
+                      <span
+                        className={`absolute left-0 -bottom-2 h-[2px] rounded-full bg-primary transition-all duration-300 ${
+                          isActive ? "w-full" : "w-0"
+                        }`}
+                      />
+                    </Link>
+                  );
+                })}
+
+                <a href="tel:+971562616261">
+                  <Button
+                    variant="cta"
+                    size="sm"
+                    className="h-10 px-6 rounded-lg gap-2 text-sm uppercase tracking-[0.1em] bg-primary text-white hover:bg-primary/90 shadow-lg"
+                  >
+                    <Phone className="w-4 h-4" />
+                    Call Now
+                  </Button>
+                </a>
+              </nav>
+
+              {/* Mobile Toggle */}
+              <button
+                className="md:hidden text-white"
+                onClick={() => setMobileOpen((prev) => !prev)}
+                aria-label="Toggle menu"
+                type="button"
+              >
+                {mobileOpen ? (
+                  <X className="w-6 h-6" />
+                ) : (
+                  <Menu className="w-6 h-6" />
+                )}
+              </button>
             </div>
-            <div className="text-xs text-orange-500 uppercase tracking-[0.2em]">
-              German & European Car Specialists
-            </div>
+
+            {/* Mobile Menu */}
+            {mobileOpen && (
+              <div className="md:hidden border-t border-white/10 px-4 pb-4">
+                <nav className="flex flex-col gap-1 pt-3">
+                  {navLinks.map((link) => {
+                    const isActive = location.pathname === link.to;
+
+                    return (
+                      <Link
+                        key={link.to}
+                        to={link.to}
+                        onClick={() => setMobileOpen(false)}
+                        className={`py-3 text-sm uppercase tracking-[0.16em] transition-colors ${
+                          isActive
+                            ? "text-primary"
+                            : "text-white/80 hover:text-white"
+                        }`}
+                      >
+                        {link.label}
+                      </Link>
+                    );
+                  })}
+
+                  <a href="tel:+971562616261" className="mt-3">
+                    <Button
+                      variant="cta"
+                      size="sm"
+                      className="w-full h-10 rounded-lg gap-2 text-sm uppercase tracking-[0.1em] bg-primary text-white hover:bg-primary/90 shadow-lg"
+                    >
+                      <Phone className="w-4 h-4" />
+                      Call Now
+                    </Button>
+                  </a>
+                </nav>
+              </div>
+            )}
           </div>
-        </Link>
+        </div>
+      </header>
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              className={`font-body text-sm tracking-wide transition-colors duration-200 ${
-                location.pathname === link.to
-                  ? "text-primary"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
-          <a href="tel:+971562616261">
-            <Button variant="cta" size="sm" className="gap-2">
-              <Phone className="w-4 h-4" />
-              Call Now
-            </Button>
-          </a>
-        </nav>
-
-        {/* Mobile toggle */}
-        <button
-          className="md:hidden text-foreground"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
-      </div>
-
-      {/* Mobile nav */}
-      {mobileOpen && (
-        <nav className="md:hidden bg-background border-b border-border px-6 pb-6">
-          {navLinks.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              onClick={() => setMobileOpen(false)}
-              className={`block py-3 font-body text-sm tracking-wide ${
-                location.pathname === link.to
-                  ? "text-primary"
-                  : "text-muted-foreground"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
-          <a href="tel:+971562616261" className="block mt-2">
-            <Button variant="cta" size="sm" className="gap-2 px-5 py-2.5 rounded-md">
-              <Phone className="w-4 h-4" />
-              Call Now
-              </Button>
-          </a>
-        </nav>
-      )}
-    </header>
+      {/* Spacer so content doesn't hide behind floating nav */}
+      <div className="h-28 md:h-32" />
+    </>
   );
 };
 
