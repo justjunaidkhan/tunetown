@@ -6,6 +6,8 @@ import diagnosticsImg from "@/assets/diagnostics.jpg";
 import bodyshopImg from "@/assets/bodyshop.jpg";
 import detailingImg from "@/assets/detailing.jpg";
 import advancebodyshop from "@/assets/advancebodyshop.jpg";
+import restoration from "@/assets/restoration.jpg";
+
 
 
 function FadeSection({ children, className = "" }: { children: React.ReactNode; className?: string }) {
@@ -45,7 +47,7 @@ const serviceDetails = [
   {
     icon: Cog,
     title: "Engine & Transmission Rebuild",
-    image: engineImg,
+    image: restoration,
     imageAlt: "Engine rebuild in clean room at Tune Town auto maintenance",
     desc: "Our dedicated clean section for engine and transmission rebuilding ensures contamination-free assembly. We handle complete rebuilds, overhauls, and performance upgrades.",
     benefits: ["Separate clean-room facility", "Complete engine overhaul", "Transmission rebuild & repair", "Turbocharger service", "Performance upgrades", "OEM parts sourcing"],

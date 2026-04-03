@@ -131,7 +131,6 @@ const Header = () => {
       </header>
 
       {/* Spacer so content doesn't hide behind floating nav */}
-      <div className="h-28 md:h-32" />
     </>
   );
 };
